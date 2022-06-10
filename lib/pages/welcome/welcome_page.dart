@@ -1,7 +1,10 @@
+import 'package:developer_alex/common/Themes/colors.dart';
 import 'package:developer_alex/pages/welcome/welcome_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:developer_alex/common/extensions/color.dart';
+import '../../common/Themes/colors.dart';
 
 class WelComePage extends StatelessWidget {
   const WelComePage({Key? key}) : super(key: key);
@@ -38,9 +41,9 @@ class WelComePage extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 200 + Get.mediaQuery.padding.bottom),
                   padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 11),
                   decoration: BoxDecoration(color: const Color(0xffffffff), borderRadius: BorderRadius.circular(4)),
-                  child: const Text(
+                  child: Text(
                     'View More !',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: ThemeColors.dark.ts(14,fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

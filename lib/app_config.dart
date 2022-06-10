@@ -18,16 +18,16 @@ enum AppEnvEnum {
 ///Application configuration class
 class AppConfig {
 
-  ///compiled mod
+  ///Compiled mod
   static const isRelease = kReleaseMode;
   static const isDebug = kDebugMode;
   static const isProfile = kProfileMode;
 
-  ///base url
+  ///Base url
   static const devBaseUrl = 'https://jsonplaceholder.typicode.com';
   static const prodBaseUrl = 'https://jsonplaceholder.typicode.com';
 
-  ///env default is dev
+  ///Env default is dev
   static AppEnvEnum _env = AppEnvEnum.dev;
   static AppEnvEnum get env => _env;
 
@@ -40,13 +40,13 @@ class AppConfig {
 
   AppConfig._builder();
 
-  ///setup app env
+  ///Setup app env
   AppConfig start({required AppEnvEnum env}) {
     _env = env;
     return _config;
   }
 
-  ///setup http client
+  ///Setup http client
   AppConfig setupHTTPClient() {
 
     final BaseOptions options = BaseOptions(
@@ -62,6 +62,7 @@ class AppConfig {
     return _config;
   }
 
+  ///Call the method after all configuration done
   void run() {
     runApp(GetMaterialApp(
       theme: ThemeData(

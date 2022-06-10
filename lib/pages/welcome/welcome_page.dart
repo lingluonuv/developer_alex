@@ -73,7 +73,7 @@ class _WavePainter extends CustomPainter {
     List points = [
       const Offset(0, 340),
       const Offset(4, 340),
-      const Offset(125, 400),
+      const Offset(135, 400),
       Offset(Get.width - 20, 272),
       Offset(Get.width, 272),
     ];

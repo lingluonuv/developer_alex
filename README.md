@@ -1,17 +1,30 @@
-# developer_alex
+### developer_alex
 
-A scaffold by your design
+### A scaffold by your design
 
-## Getting Started
+### SDK
 
-This project is a starting point for a Flutter application.
+|                 |        |
+| :-------------- | ------ |
+| Dart version    | 2.16.7 |
+| Flutter version | 2.10.3 |
 
-A few resources to get you started if this is your first Flutter project:
+### App Entry
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+| Run configuration | File      | Arg       |
+| ----------------- | --------- | --------- |
+| dev_release       | main_dev  | --release |
+| dev_debug         | main_dev  |           |
+| prod_release      | main_prod | --release |
+| prod_release      | main_prod |           |
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# developer_alex
+### Dependences
+
+GetX
+
+Dio
+
+CachedNetworkImage
+
+
+

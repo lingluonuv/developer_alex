@@ -7,11 +7,12 @@ class TeamPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffe5e5e5),
       appBar: AppBar(
-        title: Text('Our Team'),
-        backgroundColor: Color(0xffd2d2d2),
+        title: const Text('Our Team'),
       ),
+      body: ListView.builder(itemBuilder: (context,index){
+        return Container();
+      }),
     );
   }
 }

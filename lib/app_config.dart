@@ -4,6 +4,7 @@ import 'package:developer_alex/routes/app_router.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'network/http_interceptor.dart';
@@ -30,8 +31,8 @@ class AppConfig {
   static AppEnvEnum _env = AppEnvEnum.dev;
   static AppEnvEnum get env => _env;
 
+  ///Instance of AppConfig
   static AppConfig get obj => _config;
-
 
   factory AppConfig() => _config;
 
@@ -63,6 +64,20 @@ class AppConfig {
 
   void run() {
     runApp(GetMaterialApp(
+      theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: const AppBarTheme(
+            iconTheme: IconThemeData(color: Color(0xff333333)),
+            actionsIconTheme: IconThemeData(color: Color(0xff333333)),
+            backgroundColor: Colors.white,
+            elevation: 1,
+            titleTextStyle: TextStyle(
+              color: Color(0xff333333),
+              fontSize: 18,
+              fontWeight: FontWeight.bold
+            )
+          ),
+      ),
       initialRoute: '/',
       getPages: AppRouter.routes,
     ));

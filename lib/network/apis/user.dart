@@ -1,8 +1,14 @@
 
 import 'package:developer_alex/network/api.dart';
 
-mixin UserApi implements Api  {
-  Future<List> getUserList() async {
-    return await get('/users');
+class UserApi extends Api  {
+
+  UserApi._();
+
+  static Future<List> getUserList() async {
+      final res = await Api.get('/users');
+      if (res is List) return res;
+      return [];
   }
+
 }

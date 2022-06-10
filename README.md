@@ -16,7 +16,7 @@
 | dev_release       | main_dev  | --release |
 | dev_debug         | main_dev  |           |
 | prod_release      | main_prod | --release |
-| prod_release      | main_prod |           |
+| prod_debug        | main_prod |           |
 
 ### Dependences
 

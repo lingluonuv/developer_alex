@@ -30,4 +30,12 @@ class ThemeColors {
 
   static const Color ff969797 = Color(0xff969797);
 
+  static const Color ffefefef = Color(0xffefefef);
+
+  static const Color ff8d8d8d = Color(0xff8d8d8d);
+
+  static const Color ffb4b8c7 = Color(0xffb4b8c7);
+
+  static const Color ff484c5b = Color(0xff484c5b);
+
 }

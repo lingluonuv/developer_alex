@@ -26,7 +26,7 @@ class TeamPage extends StatelessWidget {
     ));
   }
 
-  ///item container
+  ///Item container
   Widget _item({required int index,required TeamController controller}) {
     final UserEntity data = controller.userList[index];
     return InkWell(
@@ -57,7 +57,9 @@ class TeamPage extends StatelessWidget {
           ],
         ),
       ),
-      onTap: controller.toDetailPage,
+      onTap: (){
+        controller.toDetailPage(user: data);
+      },
     );
   }
 }

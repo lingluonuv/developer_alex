@@ -1,4 +1,5 @@
 
+import 'package:developer_alex/common/Themes/colors.dart';
 import 'package:developer_alex/network/http_client.dart';
 import 'package:developer_alex/routes/app_router.dart';
 import 'package:dio/dio.dart';
@@ -49,11 +50,12 @@ class AppConfig {
   ///Setup http client
   AppConfig setupHTTPClient() {
 
+    /// Any http configuration setting in here
     final BaseOptions options = BaseOptions(
       baseUrl: _env==AppEnvEnum.dev ? devBaseUrl : prodBaseUrl,
-      sendTimeout:1500,
-      connectTimeout: 1500,
-      receiveTimeout: 1500,
+      sendTimeout:15000,
+      connectTimeout: 15000,
+      receiveTimeout: 15000,
     );
 
     final HttpInterceptor interceptor = HttpInterceptor();
@@ -66,20 +68,22 @@ class AppConfig {
   void run() {
     runApp(GetMaterialApp(
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
+          fontFamily: 'Inter',
+          scaffoldBackgroundColor: ThemeColors.white,
           appBarTheme: const AppBarTheme(
-            iconTheme: IconThemeData(color: Color(0xff333333)),
-            actionsIconTheme: IconThemeData(color: Color(0xff333333)),
-            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(color: ThemeColors.ff333333),
+            actionsIconTheme: IconThemeData(color: ThemeColors.ff333333),
+            backgroundColor: ThemeColors.white,
             elevation: 1,
             titleTextStyle: TextStyle(
-              color: Color(0xff333333),
+              color: ThemeColors.ff333333,
               fontSize: 18,
               fontWeight: FontWeight.bold
             )
           ),
       ),
       initialRoute: '/',
+      unknownRoute: AppRouter.unknownPage,
       getPages: AppRouter.routes,
     ));
   }

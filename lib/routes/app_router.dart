@@ -1,5 +1,6 @@
 import 'package:developer_alex/pages/album/album_page.dart';
 import 'package:developer_alex/pages/detail/detail_page.dart';
+import 'package:developer_alex/pages/not_found/not_found.dart';
 import 'package:developer_alex/pages/team/team_page.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +16,11 @@ class AppRouter {
   static const String detail = '/detail';
 
   static const String album = '/album';
+
+  static const String notfound = '/notfound';
+
+  ///404
+  static GetPage unknownPage = GetPage(name: notfound, page: ()=>const NotFoundPage());
 
   ///routes
   static List<GetPage<dynamic>> get routes => <GetPage<dynamic>>[

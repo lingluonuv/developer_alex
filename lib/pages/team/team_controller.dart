@@ -5,18 +5,18 @@ import 'package:get/get.dart';
 
 class TeamController extends GetxController {
 
-  ///user list
+  ///User list
   List<UserEntity> userList = <UserEntity>[];
 
-  ///init
+  ///Init
   @override
   void onInit() {
     super.onInit();
     loadData();
   }
 
-  ///get user list by api
-  Future<void> loadData() async {
+  ///Get user list by api
+  Future<dynamic> loadData() async {
     try {
       List res = await UserApi.getUserList();
       userList = res.map((e) => UserEntity.fromJson(e)).toList();
@@ -27,9 +27,9 @@ class TeamController extends GetxController {
     }
   }
 
-  ///to detail page
-  void toDetailPage() {
-    Get.toNamed(AppRouter.detail);
+  ///To detail page
+  void toDetailPage({required UserEntity user}) {
+    Get.toNamed(AppRouter.detail,arguments: user);
   }
 
 }

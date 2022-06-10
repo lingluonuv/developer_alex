@@ -7,6 +7,9 @@ class HttpInterceptor extends Interceptor {
     if (AppConfig.isDebug) {
       print('Dio on request');
     }
+
+    ///any setting in here
+
     handler.next(options);
   }
 
@@ -15,6 +18,9 @@ class HttpInterceptor extends Interceptor {
     if (AppConfig.isDebug) {
       print('Dio on response');
     }
+
+    ///any setting in here
+
     handler.next(response);
   }
 
@@ -23,6 +29,9 @@ class HttpInterceptor extends Interceptor {
     if (AppConfig.isDebug) {
       print('Dio on err');
     }
+
+    ///any setting in here
+
     handler.next(err);
   }
 

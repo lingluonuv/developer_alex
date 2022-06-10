@@ -12,6 +12,8 @@ class ThemeColors {
 
   static const Color primary = Color(0xffffffff);
 
+  static const Color a8ffffff = Color(0xa8ffffff);
+
   static const Color ff333333 = Color(0xff333333);
 
   static const Color ffe5e5e5 = Color(0xffe5e5e5);

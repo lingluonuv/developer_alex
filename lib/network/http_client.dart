@@ -27,8 +27,8 @@ class HTTPClient {
     Options? options,
     CancelToken? cancelToken,
     ProgressCallback? onReceiveProgress,
-  }) async {
-    return await _dio.get(path, queryParameters: queryParameters, options: options, cancelToken: cancelToken,);
+  }) {
+    return _dio.get(path, queryParameters: queryParameters, options: options, cancelToken: cancelToken,);
   }
 
   Future post(
@@ -39,8 +39,8 @@ class HTTPClient {
     CancelToken? cancelToken,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
-  }) async {
-    return await _dio.post(
+  }) {
+    return _dio.post(
       path,
       queryParameters: queryParameters,
       options: options,

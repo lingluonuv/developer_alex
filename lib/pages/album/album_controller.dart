@@ -6,10 +6,10 @@ import '../../entitys/photo_entity.dart';
 
 class AlbumController extends GetxController {
 
-  ///Args from last page
+  /// Args from last page
   late AlbumEntity album;
 
-  ///Data resource
+  /// Data source
   List<PhotoEntity> photos = <PhotoEntity>[];
 
   @override
@@ -21,7 +21,7 @@ class AlbumController extends GetxController {
     loadData();
   }
 
-  ///Get photos from api
+  /// Get photos from api
   Future<dynamic> loadData() async {
     try {
       List res = await PhotoApi.getPhotoList(albumId: album.id ?? 0);

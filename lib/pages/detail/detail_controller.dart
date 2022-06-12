@@ -5,30 +5,28 @@ import 'package:get/get.dart';
 
 import '../../entitys/album_entity.dart';
 import '../../entitys/user_entity.dart';
+import 'detail_page.dart';
 
 class DetailController extends GetxController {
+
+  /// The globale key for SliverAnimatedListState
+  final GlobalKey<SliverAnimatedListState> animatedListKey = GlobalKey<SliverAnimatedListState>();
+
+  /// Args
   late UserEntity user;
 
-  /// True means the list folded
+  /// The true means the list folded
   bool fold = false;
 
-
   /// List for display
-  List<AlbumEntity> get albums {
-    if (fold) {
-      return <AlbumEntity>[];
-    }else {
-      return totalList;
-    }
-  }
+  List<AlbumEntity> albums = <AlbumEntity>[];
 
-  /// Total list
+  /// Original data source
   List<AlbumEntity> totalList = <AlbumEntity>[];
 
   @override
   void onInit() {
     super.onInit();
-
     user = Get.arguments;
     loadData();
   }
@@ -38,7 +36,11 @@ class DetailController extends GetxController {
     try {
       List res = await AlbumApi.getAlbumList(userId: user.id ?? 0);
       totalList = res.map((e) => AlbumEntity.fromJson(e)).toList();
-      update();
+      for (int i=0;i<res.length;i++) {
+        AlbumEntity album = AlbumEntity.fromJson(res[i]);
+        albums.insert(i, album);
+        animatedListKey.currentState?.insertItem(i);
+      }
     }catch (e) {
       print('$e');
     }
@@ -47,6 +49,18 @@ class DetailController extends GetxController {
   /// On fold btn clicked
   void onFold() {
     fold = !fold;
+    if (fold) {
+      for (int i = totalList.length-1;i>=0;i--) {
+        albums.removeAt(i);
+        animatedListKey.currentState?.removeItem(i, (context, animation) => DetailAnimatedItem(index: i,controller: this, animation: animation,album: totalList[i],));
+        update();
+      }
+    }else {
+      for (int i=0;i<totalList.length;i++) {
+        albums.insert(i, totalList[i]);
+        animatedListKey.currentState?.insertItem(i);
+      }
+    }
     update();
   }
 

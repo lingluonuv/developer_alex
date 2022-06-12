@@ -15,7 +15,7 @@ class TeamController extends GetxController {
     loadData();
   }
 
-  ///Get user list by api
+  ///Get user list from api
   Future<dynamic> loadData() async {
     try {
       List res = await UserApi.getUserList();

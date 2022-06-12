@@ -41,6 +41,7 @@ class DetailController extends GetxController {
         albums.insert(i, album);
         animatedListKey.currentState?.insertItem(i);
       }
+      update();
     }catch (e) {
       print('$e');
     }

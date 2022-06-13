@@ -1,5 +1,7 @@
 [TOC]
 
+The project is built using Android Studio and has run configurations for different environments. If you don't need to care about the environment, or find configuration troublesome, you can run another project: https://github.com/lingluonuv/test_alex.git
+
 
 
 ### Project

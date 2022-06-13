@@ -12,6 +12,11 @@ class AlbumController extends GetxController {
   /// Data source
   List<PhotoEntity> photos = <PhotoEntity>[];
 
+  List<PhotoEntity> get dispalyPhotos {
+    if (photos.length<20) return photos;
+    return photos.getRange(0, 20).toList();
+  }
+
   @override
   void onInit() {
     super.onInit();

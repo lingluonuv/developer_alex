@@ -35,9 +35,9 @@ class AlbumPage extends StatelessWidget {
                         delegate: SliverChildBuilderDelegate((context, index) {
                           return ClipRRect(
                             borderRadius: BorderRadius.circular(12),
-                            child: CachedNetworkImage(imageUrl: controller.photos[index].thumbnailUrl ?? ''),
+                            child: CachedNetworkImage(imageUrl: controller.dispalyPhotos[index].thumbnailUrl ?? ''),
                           );
-                        }, childCount: controller.photos.length),
+                        }, childCount: controller.dispalyPhotos.length),
                       ),
                     ),
                   ],

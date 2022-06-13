@@ -21,6 +21,7 @@ class DetailPage extends StatelessWidget {
             children: [
               CustomScrollView(
                 slivers: [
+
                   ///top area
                   SliverToBoxAdapter(
                     child: _topWidget(controller),

@@ -54,7 +54,6 @@ class DetailController extends GetxController {
       for (int i = totalList.length-1;i>=0;i--) {
         albums.removeAt(i);
         animatedListKey.currentState?.removeItem(i, (context, animation) => DetailAnimatedItem(index: i,controller: this, animation: animation,album: totalList[i],));
-        update();
       }
     }else {
       for (int i=0;i<totalList.length;i++) {
